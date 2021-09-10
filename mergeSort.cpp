@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void sort(vector<int> & bar);
+void sort(vector<int>& bar);
 void mergeSort(vector<int>&left,vector<int>& right,vector<int>& bars);
 
 int main() {
