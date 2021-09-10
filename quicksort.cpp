@@ -11,14 +11,6 @@ void swap(int* a, int* b)
     *a = *b; 
     *b = t; 
 } 
-
-void printArray(vector<int>& arr, int size) 
-{ 
-    int i; 
-    for (i = 0; i < size; i++) 
-        cout << arr[i] << " "; 
-    cout << endl; 
-} 
   
 int main()
 {
@@ -34,7 +26,9 @@ int main()
     quickSort(nums, 0, nums.size() - 1);
 
     cout << "Sorted array: \n"; 
-    printArray(nums, nums.size()); 
+    for (int i = 0; i < nums.size(); i++) 
+        cout << nums[i] << " "; 
+    cout << endl; 
 
 }
 
