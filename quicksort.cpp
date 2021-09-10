@@ -11,7 +11,7 @@ int main()
 
     srand((unsigned) time(NULL));
 
-    for(size_t i = 0; i < 10000; i++)
+    for(size_t i = 0; i < 50; i++)
     {
         nums.push_back(rand() % 1000);
     }

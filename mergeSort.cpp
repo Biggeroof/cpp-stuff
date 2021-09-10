@@ -14,11 +14,11 @@ int main() {
     srand((unsigned) time(&t));
 
     //changing i changes the size of the vector
-    for (size_t i = 0; i < 40; i++)
+    for (size_t i = 0; i < 50; i++)
     {
         //generating random nums
         
-        nums.push_back(rand() % 10000);
+        nums.push_back(rand() % 1000);
     }
 
 
