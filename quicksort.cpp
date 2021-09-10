@@ -4,13 +4,6 @@ using namespace std;
 
 void quickSort(vector<int>& bar, int l, int r);
 int partition(vector<int>& bar, int l, int r);
-
-void swap(int* a, int* b) 
-{ 
-    int t = *a; 
-    *a = *b; 
-    *b = t; 
-} 
   
 int main()
 {
@@ -18,7 +11,7 @@ int main()
 
     srand((unsigned) time(NULL));
 
-    for(size_t i = 0; i < 10; i++)
+    for(size_t i = 0; i < 10000; i++)
     {
         nums.push_back(rand() % 1000);
     }
@@ -38,25 +31,32 @@ void quickSort(vector<int>& bar, int l, int r)
     {
         //partition index
         int pi = partition(bar, l, r);
-
+        //quicksorts the left side
         quickSort(bar, l, pi - 1);
+        //quicksorts the right side
         quickSort(bar, pi + 1, r);
     }
 }
 
 int partition(vector<int>& bar, int l, int r)
 {
+    //creates pivot on right ()
     int pivot = bar[r];
+    //index of smaller element and indicates the correct position of the pivot (numbers lower than it to the left and numbers higher than it to the right)
     int i = (l - 1);
 
     for(int j = l; j < r; j++)
+    //iterates from left to right of the arrray
     {
+        //if the element at j is less than the pivot increase i by 1 and swap i and j
         if(bar[j] < pivot)
         {
             i++;
-            swap(&bar[i], &bar[j]);
+            swap(bar[i], bar[j]);
         }
     }
-    swap(&bar[i+1], &bar[r]);
+    //place the pivot at the correct location by swapping i + 1 and the pivot
+    swap(bar[i+1], bar[r]);
+    //return the index of the pivot
     return (i + 1);
 }

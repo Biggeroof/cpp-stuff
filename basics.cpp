@@ -166,8 +166,8 @@ int main()
         cout << &age << endl;
         //prints out memory address of variable because & was added (reference)
 
-        int *pAge = &age;
-        //can also store this in a vairbale then print
+        int* pAge = &age;
+        //can also store this in a variable then print
         cout << *pAge << endl;
         //this prints the value beacuse a * was added (deference)
         cout << pAge << endl;

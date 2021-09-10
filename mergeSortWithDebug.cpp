@@ -14,17 +14,21 @@ int main() {
     srand((unsigned) time(&t));
 
     //changing i changes the size of the vector
-    for (size_t i = 0; i < 40; i++)
+    for (size_t i = 0; i < 10000; i++)
     {
         //generating random nums
         
         nums.push_back(rand() % 10000);
     }
 
+    cout << "before sort: ";
+    for (size_t i = 0; i < nums.size(); i++)
+        cout << nums[i] << " ";
+    cout << endl;
 
     sort(nums);
 
-    cout << "Sorted!: ";
+    cout << "After sort: ";
     for (size_t i = 0; i < nums.size(); i++)
         cout << nums[i] << " ";
     cout << endl;
@@ -49,13 +53,25 @@ void sort(vector<int>& bar) {
         left.push_back(bar[j]);
     for (size_t j = 0; j < (bar.size()) - mid; j++)
         right.push_back(bar[mid + j]);
+    
+    cout << "left side: ";
+    for (size_t i = 0; i < left.size(); i++)
+        cout << left[i] << " ";
+    cout << endl;
 
     //keeps sorting the left side until there is only 1 element left in the subarrays (goes down 1 depth each time called)
     sort(left);
 
+    cout << "right side: ";
+    for (size_t i = 0; i < right.size(); i++)
+        cout << right[i] << " ";
+    cout << endl;
+
     //keeps sorting the right side until there is only 1 element left in the subarrays (goes down 1 depth each time called)
     sort(right);
 
+    
+    cout << "called merge sort" << endl;
     //merges the arrays at the current recursive depth (this makes it go back up 1 depth since the function ends here)
     //at depth of 1 "bar" refers to the original vector
     mergeSort(left, right, bar);
@@ -103,4 +119,8 @@ void mergeSort(vector<int>& left, vector<int>& right, vector<int>& bars)
         bars[i] = right[k];
         k++; i++;
     }
+        cout << "current array: ";
+        for (size_t i = 0; i < bars.size(); i++)
+        cout << bars[i] << " ";
+        cout << endl;
 }
