@@ -97,7 +97,7 @@ void mergeSort(vector<int>& left, vector<int>& right, vector<int>& bars)
         bars[i] = left[j];
         j++; i++;
     }
-    // if left list is shorter than the right list, then the remaining elements rfom the right list are added in
+    // if left list is shorter than the right list, then the remaining elements from the right list are added in
     while (k < nR) {
         
         bars[i] = right[k];
