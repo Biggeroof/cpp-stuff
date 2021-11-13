@@ -93,12 +93,12 @@ void mergeSort(vector<int>& left, vector<int>& right, vector<int>& bars)
     //This is fixed in the 2 while loops below
     while (j < nL && k < nR) 
     {
-        //if left[0] is greater than right[0], then the left[0] value is added to the new vector
+        //if left[j] is less than right[k], then the left[0] value is added to the new vector
         if (left[j] <= right[k]) {
             bars[i] = left[j];
             j++;
         }
-        //if left[0] is less than right[0], then the right[0] value is added to the new vector
+        //if left[0] is greater than right[0], then the right[0] value is added to the new vector
         else {
 
             bars[i] = right[k];
@@ -109,13 +109,11 @@ void mergeSort(vector<int>& left, vector<int>& right, vector<int>& bars)
 
     // if right list is shorter than the left list, then the remaining elements from the left list are added in
     while (j < nL) {
-        
         bars[i] = left[j];
         j++; i++;
     }
     // if left list is shorter than the right list, then the remaining elements rfom the right list are added in
-    while (k < nR) {
-        
+    while (k < nR) 
         bars[i] = right[k];
         k++; i++;
     }
