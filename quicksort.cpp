@@ -46,7 +46,7 @@ void quickSort(vector<int>& bar, int l, int r)
 int partition(vector<int>& bar, int l, int r)
 {
     cout << "Current array(1): \n"; 
-    for (int i = 0; i < r + 1; i++) 
+    for (int i = l; i < r + 1; i++) 
         cout << bar[i] << " "; 
     cout << endl;
     //creates pivot on right ()
@@ -59,10 +59,12 @@ int partition(vector<int>& bar, int l, int r)
     for(int j = l; j < r; j++)
     //iterates from left to right of the arrray
     {
+        cout << "iteration " << j << endl;
         //if the element at j is less than the pivot increase i by 1 and swap i and j
         if(bar[j] < pivot)
-        {
+        {   
             i++;
+            cout << "swapping " << bar[i] << " and " << bar[j] << endl;
             swap(bar[i], bar[j]);
         }
     }
@@ -71,7 +73,7 @@ int partition(vector<int>& bar, int l, int r)
     //return the index of the pivot
     
     cout << "Current array(2): \n"; 
-    for (int i = 0; i < r + 1; i++) 
+    for (int i = l; i < r + 1; i++) 
         cout << bar[i] << " "; 
     cout << endl;
     return (i + 1);
